@@ -115,4 +115,20 @@ extract() {
 shopt -s extglob
 
 
+ 
+#******************
+#  set all the enviroment variables. 
+#*****************
 
+export php_executable_path=/usr/bin/php-cgi
+
+# The next line updates  
+# PATH for the Google Cloud SDK.
+if [ -f /Users/tahseen/Downloads/google-cloud-sdk/path.bash.inc ]; then
+  source '/Users/tahseen/Downloads/google-cloud-sdk/path.bash.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f /Users/tahseen/Downloads/google-cloud-sdk/completion.bash.inc ]; then
+  source '/Users/tahseen/Downloads/google-cloud-sdk/completion.bash.inc'
+fi
