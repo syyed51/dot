@@ -35,43 +35,10 @@ nmap <Enter> i <Enter> <Esc>
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-
-"--------------------------------------------------------------------------
-"
-" 
-"          Plugins 
-"
-"__________________________________________________________________________
-
-
-" Add pathogen to load autoload pugins
-set nocp
-execute pathogen#infect()
-filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete        "enbale onmicomplete for smart autocompletion.
-syntax on
- 
- 
-" Set airline statusline to appear even in single vim editor
-" https://github.com/vim-airline/vim-airline.git
-set laststatus=2
-      
-
-
-"vim-jsx
-"https://github.com/mxw/vim-jsx.git
-"Syntax highlighting and indenting for JSX. JSX is a JavaScript syntax
-"transformer which translates inline XML document fragments into JavaScript
-"objects. It was developed by Facebook alongside React.
-let g:jsx_ext_required = 0
-" Use global installation of eslint for linting javascript files
 let g:syntastic_javascript_checkers = ['eslint'] 
 "--------------------------------------------------------------------------
-"
-" 
 "           
 "            VIM Configurations 
-" 
 "__________________________________________________________________________
  
 "enable mouse in all modes.
@@ -99,7 +66,7 @@ set tabstop=4       " number of spaces per TAB
 set expandtab
 set autoindent
 set showcmd         " show the command being types
-
+set incsearch       " enable instant search
 "folding settings
 set foldmethod=syntax   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
@@ -127,10 +94,12 @@ set smartcase
 " remember this does not work if you change vim directory from within vim.
 set path+=**
 
-
-" set spell checking dictionary
-" set spell spelllang=en_us
-" turn off spell highlighting
+"change search highlight color
+:highlight IncSearch gui=underline,bold guifg=White guibg=Red3
+ 
+set backspace=indent,eol,start  
+ 
+set nostartofline
 " set nospell 
 
 
@@ -157,25 +126,50 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 
 
+"--------------------------------------------------------------------------
+" 
+"          Plugins 
+"
+"__________________________________________________________________________
+
+
+" Add pathogen to load autoload pugins
+set nocp
+execute pathogen#infect()
+filetype plugin indent on
+set omnifunc=syntaxcomplete#Complete        "enbale onmicomplete for smart autocompletion.
+syntax on
+ 
+ 
+" Set airline statusline to appear even in single vim editor
+" https://github.com/vim-airline/vim-airline.git
+set laststatus=2
+      
+
+
+"vim-jsx
+"https://github.com/mxw/vim-jsx.git
+"Syntax highlighting and indenting for JSX. JSX is a JavaScript syntax
+"transformer which translates inline XML document fragments into JavaScript
+"objects. It was developed by Facebook alongside React.
+let g:jsx_ext_required = 0
+" Use global installation of eslint for linting javascript files
+ 
+ 
 "     SYNTASTIC
 " The syntax checker for vim
 " https://github.com/vim-syntastic/syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-
-
-
-
 
 "      ag
 "   the great ag searcher for vim
 "   set to be used with vimgrep
 "   https://github.com/ggreer/the_silver_searcher
 let g:ackprg = 'ag --vimgrep'
+
