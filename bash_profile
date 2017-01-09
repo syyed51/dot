@@ -22,9 +22,12 @@
  
 alias cls="clear&&ls"
 alias tehseen='ssh tehseen@10.0.0.5'
- 
+alias asif="ssh admin@10.0.1.9" 
+
 alias rm="rm -i"
-alias ept="cd /Users/tehseen/SEB/epension2/C.Biz.CriticalIllness"
+alias ept="cd /Users/tahseen/SEB/epension2/C.Biz.CriticalIllness"
+alias p41="cd /Users/tahseen/SEB/epension2/p41"
+alias con="cd /Users/tahseen/configfiles"
 alias vc="cd /Users/tahseen/SEB/epension2/venderCode"
 alias dt="cd /Users/tahseen/Desktop"
 alias dd="cd /Users/tahseen/Downloads"
