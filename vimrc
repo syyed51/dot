@@ -202,5 +202,7 @@ let g:syntastic_check_on_wq = 0
 "   the great ag searcher for vim
 "   set to be used with vimgrep
 "   https://github.com/ggreer/the_silver_searcher
-let g:ackprg = 'ag --vimgrep'
+ 
+ "let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
