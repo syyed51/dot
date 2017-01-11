@@ -35,44 +35,14 @@ nmap <Enter> i <Enter> <Esc>
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-let g:syntastic_javascript_checkers = ['eslint'] 
 
-"--------------------------------------------------------------------------
-"
-" 
-"          Plugins 
-"
-"__________________________________________________________________________
-
-
-" Add pathogen to load autoload pugins
-set nocp
-execute pathogen#infect()
-filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete        "enbale onmicomplete for smart autocompletion.
-syntax on
- 
- 
-" Set airline statusline to appear even in single vim editor
-" https://github.com/vim-airline/vim-airline.git
-set laststatus=2
-      
-
-
-"vim-jsx
-"https://github.com/mxw/vim-jsx.git
-"Syntax highlighting and indenting for JSX. JSX is a JavaScript syntax
-"transformer which translates inline XML document fragments into JavaScript
-"objects. It was developed by Facebook alongside React.
-let g:jsx_ext_required = 0
-" Use global installation of eslint for linting javascript files
- let g:syntastic_javascript_checkers = ['eslint'] 
 "--------------------------------------------------------------------------
 "           
 "            VIM Configurations 
 "__________________________________________________________________________
  
-"enable mouse in all modes.
+ 
+ "enable mouse in all modes.
 set mouse=a
 
 
@@ -175,7 +145,7 @@ syntax on
 " Set airline statusline to appear even in single vim editor
 " https://github.com/vim-airline/vim-airline.git
 set laststatus=2
-      
+let g:airline#extensions#tabline#enabled = 1 
 
 
 "vim-jsx
@@ -184,19 +154,22 @@ set laststatus=2
 "transformer which translates inline XML document fragments into JavaScript
 "objects. It was developed by Facebook alongside React.
 let g:jsx_ext_required = 0
-" Use global installation of eslint for linting javascript files
  
  
 "     SYNTASTIC
 " The syntax checker for vim
 " https://github.com/vim-syntastic/syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" enbale eslint 
+let g:syntastic_javascript_checkers = ['eslint'] 
+
 
 "      ag
 "   the great ag searcher for vim
