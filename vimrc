@@ -35,76 +35,8 @@ nmap <Enter> i <Enter> <Esc>
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
-
-"--------------------------------------------------------------------------
-"           
-"            VIM Configurations 
-"__________________________________________________________________________
  
- 
- "enable mouse in all modes.
-set mouse=a
-
-
-set smartindent
-
-
-if v:version >= 703
-    "undo settings
-    set undodir=~/.vim/undofiles
-    set undofile
-    "set colorcolumn=+1 "mark the ideal max text width
-endif
-
-
-" set temp directory
-set directory=~/.vim/swapfiles/
-
-"default indent settings
-set shiftwidth=4 
-set softtabstop=4   " number of visual spaces per TAB
-set tabstop=4       " number of spaces per TAB
-set expandtab
-set autoindent
-set showcmd         " show the command being types
-set incsearch       " enable instant search
-"folding settings
-set foldmethod=syntax   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-
-set wildmode=list:longest   "make cmdline tab completion similar to bash
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set nowrapscan                  "do not wrap around search 
-set formatoptions-=o "dont continue comments when pushing o/O
-
-"vertical/horizontal scroll off settings
-set scrolloff=3
-set sidescrolloff=7
-set sidescroll=1
- 
-"Line numbers
-set number
-set relativenumber
-
-set ignorecase
-set smartcase 
-
-" set vim path dynamically to current working directory
-" remember this does not work if you change vim directory from within vim.
-set path+=**
-
-"change search highlight color
-:highlight IncSearch gui=underline,bold guifg=White guibg=Red3
- 
-set backspace=indent,eol,start  
- 
-set nostartofline
-" set nospell 
-
-
-" Setup Omni complete
+ " Setup Omni complete on tab key
 function! SuperCleverTab()
     if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
         return "\<Tab>"
@@ -124,9 +56,72 @@ function! SuperCleverTab()
 endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+ 
+"--------------------------------------------------------------------------
+"           
+"            VIM Configurations 
+"__________________________________________________________________________
+ 
+ 
+ "enable mouse in all modes.
+set mouse=a
 
 
+set smartindent
 
+
+if v:version >= 703
+    "undo settings
+    set undodir=~/.vim/undofiles
+    set undofile
+    "set colorcolumn=+1 "mark the ideal max text width
+endif
+ 
+ "default indent settings
+set shiftwidth=4 
+set softtabstop=4   " number of visual spaces per TAB
+set tabstop=4       " number of spaces per TAB
+set expandtab
+set autoindent
+set showcmd         " show the command being types
+set incsearch       " enable instant search
+ 
+ "folding settings
+set foldmethod=syntax   "fold based on indent
+set foldnestmax=3       "deepest fold is 3 levels
+set nofoldenable        "dont fold by default
+
+set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set nowrapscan                  "do not wrap around search 
+set formatoptions-=o "dont continue comments when pushing o/O
+
+"vertical/horizontal scroll off settings
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+ 
+"Line numbers
+"set number
+"set relativenumber
+
+set ignorecase
+set smartcase 
+
+" set vim path dynamically to current working directory
+" remember this does not work if you change vim directory from within vim.
+set path+=**
+
+"change search highlight color
+:highlight IncSearch gui=underline,bold guifg=White guibg=Red3
+ 
+set backspace=indent,eol,start  
+ 
+set nostartofline
+" set nospell 
+
+set directory=~/.vim/swapfiles/
 "--------------------------------------------------------------------------
 " 
 "          Plugins 
@@ -172,8 +167,22 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 
 "      ag
-"   the great ag searcher for vim
+"   the silver searcher for vim
 "   set to be used with vimgrep
 "   https://github.com/ggreer/the_silver_searcher
 let g:ackprg = 'ag --vimgrep'
 
+
+"--------------------------------------------------------------------------
+" 
+"          auto commands
+"
+"__________________________________________________________________________
+
+"
+" auto reload vim, when there are changes in .vimrc
+"
+augroup myvimrc
+    au!
+    au BufWritePost .vimrc so $MYVIMRC 
+augroup END
