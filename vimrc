@@ -175,7 +175,9 @@ syntax on
 " Set airline statusline to appear even in single vim editor
 " https://github.com/vim-airline/vim-airline.git
 set laststatus=2
-      
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 
 "vim-jsx
@@ -202,5 +204,6 @@ let g:syntastic_check_on_wq = 0
 "   the great ag searcher for vim
 "   set to be used with vimgrep
 "   https://github.com/ggreer/the_silver_searcher
-let g:ackprg = 'ag --vimgrep'
+"let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
