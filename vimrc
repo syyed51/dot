@@ -9,6 +9,7 @@
 "set the leader key
 :let mapleader = "," 
  
+ 
 
 nmap <Enter> i <Enter> <Esc>             
 " nmap <BS> x
@@ -33,7 +34,12 @@ nmap <Enter> i <Enter> <Esc>
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <C-L> :nohls<CR><C-L>
+ 
+"--------------------------------------------------------------------------
+"           
+"           functions 
+"__________________________________________________________________________
  
  " Setup Omni complete on tab key
 function! SuperCleverTab()
@@ -55,6 +61,18 @@ function! SuperCleverTab()
 endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+" See the diff of file on disk and current edited version
+" can be used to see swap saved on disk :)
+function! s:DiffWithSaved()
+    let filetype=&ft
+    diffthis
+    vnew | r # | normal! 1Gdd
+    diffthis
+    exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! Diffsaved call s:DiffWithSaved()
+ 
  
 "--------------------------------------------------------------------------
 "           
@@ -67,7 +85,9 @@ set mouse=a
 
 
 set smartindent
-
+set novisualbell
+set t_vb=
+autocmd! GUIEnter * set vb t_vb=
 
 if v:version >= 703
     "undo settings
@@ -102,8 +122,8 @@ set sidescrolloff=7
 set sidescroll=1
  
 "Line numbers
-"set number
-"set relativenumber
+set number
+set relativenumber
 
 set ignorecase
 set smartcase 
