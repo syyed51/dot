@@ -152,8 +152,8 @@ set directory=~/.vim/swapfiles/
 set nocp
 execute pathogen#infect()
 filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete        "enbale onmicomplete for smart autocompletion.
 syntax on
+set omnifunc=syntaxcomplete#Complete        "enbale onmicomplete for smart autocompletion.
  
  
 " Set airline statusline to appear even in single vim editor
@@ -163,6 +163,19 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
+let g:airline#extensions#tabline#enabled = 1 
+" the separator used on the left side >
+let g:airline_left_sep='>'
+" the separator used on the right side >
+  let g:airline_right_sep='<'
+
+" enable modified detection >
+  let g:airline_detect_modified=1
+
+" enable paste detection >
+  let g:airline_detect_paste=1
+" enable/disable syntastic integration >
+  let g:airline#extensions#syntastic#enabled = 1
 
 "vim-jsx
 "https://github.com/mxw/vim-jsx.git
