@@ -61,7 +61,6 @@ function! SuperCleverTab()
 endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
-
 " See the diff of file on disk and current edited version
 " can be used to see swap saved on disk :)
 function! s:DiffWithSaved()
@@ -78,14 +77,16 @@ com! Diffsaved call s:DiffWithSaved()
 "           
 "            VIM Configurations 
 "__________________________________________________________________________
- 
+
+" always open vertical split on the right.
+set splitright 
  
  "enable mouse in all modes.
 set mouse=a
 
 
 set smartindent
-set novisualbell
+set visualbell
 set t_vb=
 autocmd! GUIEnter * set vb t_vb=
 
