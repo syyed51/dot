@@ -57,7 +57,8 @@ dict () {
 #******************
 # Colors for man pages
 #*****************
-export LESS_TERMCAP_mb=$'\E[01;31m'
+ 
+ export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
@@ -123,7 +124,11 @@ shopt -s extglob
 #******************
 #  set all the enviroment variables. 
 #*****************
-
+export BASH_PROFILE=/Users/tahseen/.bash_profile
+export VIMRC=/Users/tahseen/.vimrc
+ 
+ 
+ 
 export php_executable_path=/usr/bin/php-cgi
 
 # The next line updates  
