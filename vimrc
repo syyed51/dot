@@ -145,6 +145,10 @@ set nostartofline
 " set nospell 
 
 set directory=~/.vim/swapfiles/
+
+" I like to see my cursor position like :)
+set cursorline
+set cursorcolumn
 "--------------------------------------------------------------------------
 " 
 "          Plugins 
