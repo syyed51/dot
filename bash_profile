@@ -1,4 +1,5 @@
  
+ 
 #Change editing mode
 #set -o vi
 #set -o emacs
@@ -36,7 +37,7 @@ alias git=/usr/local/bin/git
 alias ctags='/usr/local/bin/ctags'
  
 alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn" # Show me the size (sorted) of only the folders in this directory
-alias ls="ls -G"
+alias ls="ls -GF"
 alias commandments="history | awk '{print $2}' | awk 'BEGIN {FS=\"|\"}{print $1}' | sort | uniq -c | sort -nr | head"
 alias reload="sudo killall Finder $$ open /System/Library/CoreServices/Finder.app"
  
@@ -56,7 +57,8 @@ dict () {
 #******************
 # Colors for man pages
 #*****************
-export LESS_TERMCAP_mb=$'\E[01;31m'
+ 
+ export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
@@ -122,7 +124,11 @@ shopt -s extglob
 #******************
 #  set all the enviroment variables. 
 #*****************
-
+export BASH_PROFILE=/Users/tahseen/.bash_profile
+export VIMRC=/Users/tahseen/.vimrc
+ 
+ 
+ 
 export php_executable_path=/usr/bin/php-cgi
 
 # The next line updates  
