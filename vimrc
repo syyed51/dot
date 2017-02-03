@@ -32,6 +32,11 @@ nmap <Enter> i <Enter> <Esc>
 "
 
 
+" Create abbrivations for commonly mistyped 
+" words
+" iabbr viod void
+" iabbr func function
+
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohls<CR><C-L>
@@ -168,7 +173,7 @@ let g:airline#extensions#tabline#enabled = 1
 " the separator used on the left side >
 let g:airline_left_sep='>'
 " the separator used on the right side >
-  let g:airline_right_sep='<'
+ let g:airline_right_sep='<'
 
 " enable modified detection >
   let g:airline_detect_modified=1
@@ -185,25 +190,19 @@ let g:airline_left_sep='>'
 "objects. It was developed by Facebook alongside React.
 let g:jsx_ext_required = 0
  
+" async linting
+" https://github.com/w0rp/ale
+"Use ale plugin
+" use specific linter for specific file type.
+ let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
  
-"     SYNTASTIC
-" The syntax checker for vim
-" https://github.com/vim-syntastic/syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
- 
-let g:syntastic_mode_map = { 'mode': 'active',
-                            \ 'active_filetypes': ['javascript'],
-                            \ 'passive_filetypes': ['html'] }
-
-let g:syntastic_javascript_checkers = ['eslint'] 
-
-
 "      ag
 "   the silver searcher for vim
 "   set to be used with vimgrep
@@ -221,7 +220,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 "
 " auto reload vim, when there are changes in .vimrc
 "
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc so $MYVIMRC 
-augroup END
+"augroup myvimrc
+ "   au!
+ "   au BufWritePost .vimrc so $MYVIMRC 
+"augroup END
