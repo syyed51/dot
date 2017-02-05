@@ -39,6 +39,9 @@ nmap <Enter> i <Enter> <Esc>
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
+" increase decrease current splist window size.
+map + <C-W>+
+map - <C-W>-
 "--------------------------------------------------------------------------
 "           
 "           functions 
@@ -135,7 +138,8 @@ set smartcase
 " set vim path dynamically to current working directory
 " remember this does not work if you change vim directory from within vim.
 set path+=**
-
+" ignore node_module folder when using find ommand.
+set wildignore+=**/node_module/**   
 "change search highlight color
 :highlight IncSearch gui=underline,bold guifg=White guibg=Red3
  
