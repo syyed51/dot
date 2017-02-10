@@ -39,6 +39,7 @@ nmap <Enter> i <Enter> <Esc>
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
+nnoremap <C-L> :nohl<CR><C-L> 
 " increase decrease current splist window size.
 map + <C-W>+
 map - <C-W>-
@@ -188,6 +189,13 @@ let g:airline_left_sep='>'
   let g:airline_detect_paste=1
 " enable/disable syntastic integration >
   let g:airline#extensions#syntastic#enabled = 1
+
+" vim javascript
+" JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+"https://github.com/pangloss/vim-javascript.git
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+
 
 "vim-jsx
 "https://github.com/mxw/vim-jsx.git
