@@ -140,7 +140,7 @@ set smartcase
 " remember this does not work if you change vim directory from within vim.
 set path+=**
 " ignore node_module folder when using find ommand.
-set wildignore+=**/node_module/**   
+set wildignore+=**/node_modules/**   
 "change search highlight color
 :highlight IncSearch gui=underline,bold guifg=White guibg=Red3
  
@@ -223,6 +223,21 @@ let g:ale_sign_warning = '--'
 "   https://github.com/ggreer/the_silver_searcher
 "let g:ackprg = 'ag --vimgrep'
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+
+
+"--------------------------------------------------------------------------
+" 
+"          Color schemes / themes
+"__________________________________________________________________________
+
+
+syntax enable
+set background=dark
+"set background=light
+colorscheme solarized
+let g:solarized_termcolors=256
+
 
 
 "--------------------------------------------------------------------------
