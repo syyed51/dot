@@ -224,12 +224,12 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 "__________________________________________________________________________
 
 
-syntax enable
+"syntax enable
 set background=dark
 "set background=light
 colorscheme solarized
 let g:solarized_termcolors=256
-
+set guifont=Menlo:h12
 
 
 "--------------------------------------------------------------------------
