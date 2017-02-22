@@ -1,4 +1,5 @@
  
+ 
 "--------------------------------------------------------------------------
 " 
 "           Key Mapping
@@ -39,6 +40,10 @@ nmap <Enter> i <Enter> <Esc>
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
+nnoremap <C-L> :nohl<CR><C-L> 
+" increase decrease current splist window size.
+map + <C-W>+
+map - <C-W>-
 "--------------------------------------------------------------------------
 "           
 "           functions 
@@ -61,7 +66,8 @@ function! SuperCleverTab()
             "\<C-N>"
         endif
     endif
-endfunction
+ 
+ endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 " See the diff of file on disk and current edited version
@@ -73,7 +79,8 @@ function! s:DiffWithSaved()
     diffthis
     exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
-com! Diffsaved call s:DiffWithSaved()
+com! diffsaved call s:DiffWithSaved()
+ 
  
  
 "--------------------------------------------------------------------------
@@ -135,7 +142,8 @@ set smartcase
 " set vim path dynamically to current working directory
 " remember this does not work if you change vim directory from within vim.
 set path+=**
-
+" ignore node_module folder when using find ommand.
+set wildignore+=**/node_modules/**   
 "change search highlight color
 :highlight IncSearch gui=underline,bold guifg=White guibg=Red3
  
@@ -145,6 +153,10 @@ set nostartofline
 " set nospell 
 
 set directory=~/.vim/swapfiles/
+
+" I like to see my cursor position like :)
+set cursorline
+set cursorcolumn
 "--------------------------------------------------------------------------
 " 
 "          Plugins 
@@ -181,6 +193,13 @@ let g:airline_left_sep='>'
 " enable/disable syntastic integration >
   let g:airline#extensions#syntastic#enabled = 1
 
+" vim javascript
+" JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+"https://github.com/pangloss/vim-javascript.git
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+
+
 "vim-jsx
 "https://github.com/mxw/vim-jsx.git
 "Syntax highlighting and indenting for JSX. JSX is a JavaScript syntax
@@ -208,7 +227,23 @@ let g:ale_sign_warning = '--'
 "let g:ackprg = 'ag --vimgrep'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+"--------------------------------------------------------------------------
+" 
+"          Color schemes / themes
+"__________________________________________________________________________
 
+
+"syntax enable
+set background=dark
+"set background=light
+colorscheme solarized
+let g:solarized_termcolors=256
+set guifont=Menlo:h12
+
+
+"   Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. 
+"   https://github.com/majutsushi/tagbar.git
+nmap <F8> :TagbarToggle<CR>
 "--------------------------------------------------------------------------
 " 
 "          auto commands
