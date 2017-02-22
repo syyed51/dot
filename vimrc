@@ -77,7 +77,8 @@ function! s:DiffWithSaved()
     diffthis
     exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
-com! Diffsaved call s:DiffWithSaved()
+com! diffsaved call s:DiffWithSaved()
+ 
  
  
 "--------------------------------------------------------------------------
@@ -224,8 +225,6 @@ let g:ale_sign_warning = '--'
 "let g:ackprg = 'ag --vimgrep'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-
-
 "--------------------------------------------------------------------------
 " 
 "          Color schemes / themes
@@ -240,6 +239,9 @@ let g:solarized_termcolors=256
 set guifont=Menlo:h12
 
 
+"   Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. 
+"   https://github.com/majutsushi/tagbar.git
+nmap <F8> :TagbarToggle<CR>
 "--------------------------------------------------------------------------
 " 
 "          auto commands
