@@ -1,4 +1,5 @@
  
+ 
 "--------------------------------------------------------------------------
 " 
 "           Key Mapping
@@ -65,7 +66,8 @@ function! SuperCleverTab()
             "\<C-N>"
         endif
     endif
-endfunction
+ 
+ endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 " See the diff of file on disk and current edited version
@@ -141,7 +143,7 @@ set smartcase
 " remember this does not work if you change vim directory from within vim.
 set path+=**
 " ignore node_module folder when using find ommand.
-set wildignore+=**/node_module/**   
+set wildignore+=**/node_modules/**   
 "change search highlight color
 :highlight IncSearch gui=underline,bold guifg=White guibg=Red3
  
@@ -224,6 +226,20 @@ let g:ale_sign_warning = '--'
 "   https://github.com/ggreer/the_silver_searcher
 "let g:ackprg = 'ag --vimgrep'
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+"--------------------------------------------------------------------------
+" 
+"          Color schemes / themes
+"__________________________________________________________________________
+
+
+"syntax enable
+set background=dark
+"set background=light
+colorscheme solarized
+let g:solarized_termcolors=256
+set guifont=Menlo:h12
+
 
 "   Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. 
 "   https://github.com/majutsushi/tagbar.git
