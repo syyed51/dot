@@ -1,4 +1,3 @@
- 
 "--------------------------------------------------------------------------
 " 
 "           Key Mapping
@@ -29,8 +28,9 @@ nmap <Enter> i <Enter> <Esc>
 
 "Map Q to formate paragraph.
 " nnoremap Q gq}
-"
 
+" 
+nnoremap <leader>p "_diw"0P
 
 " Create abbrivations for commonly mistyped 
 " words
@@ -77,7 +77,7 @@ function! s:DiffWithSaved()
     diffthis
     exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
 endfunction
-com! diffsaved call s:DiffWithSaved()
+com! DiffSaved call s:DiffWithSaved()
  
  
  
@@ -191,12 +191,6 @@ let g:airline_left_sep='>'
 " enable/disable syntastic integration >
   let g:airline#extensions#syntastic#enabled = 1
 
-" vim javascript
-" JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
-"https://github.com/pangloss/vim-javascript.git
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-
 
 "vim-jsx
 "https://github.com/mxw/vim-jsx.git
@@ -204,7 +198,33 @@ let g:javascript_plugin_ngdoc = 1
 "transformer which translates inline XML document fragments into JavaScript
 "objects. It was developed by Facebook alongside React.
 let g:jsx_ext_required = 0
- 
+
+" vim javascript
+" JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
+"https://github.com/pangloss/vim-javascript.git
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+
+"Concealing Characters
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+" set concealing in vim
+set conceallevel=1
+
+" toggle concealing
+map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+
 " async linting
 " https://github.com/w0rp/ale
 "Use ale plugin
