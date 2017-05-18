@@ -1,27 +1,21 @@
- 
- 
- 
 "--------------------------------------------------------------------------
 " 
 "           Key Mapping
 "
 "__________________________________________________________________________
  
- 
-"set the leader key
 :let mapleader = "," 
- 
- 
+"set the leader key
 
 nmap <Enter> i <Enter> <Esc>             
 " nmap <BS> x
 " inoremap <Space>i<Space><Esc>
 "Map Q to formate paragraph.
-" nnoremap Q gq}
+ nnoremap Q gq}
 "
 
 "map j to formate json files.
-"nmap =j :%!python -m json.tool<CR>
+nmap =j :%!python -m json.tool<CR>
 
 
 
@@ -29,16 +23,12 @@ nmap <Enter> i <Enter> <Esc>
 "    nmap <BS> x
 "   inoremap <Space>i<Space><Esc>
 
-"Map Q to formate paragraph.
-" nnoremap Q gq}
-
-" 
 nnoremap <leader>p "_diw"0P
 
 " Create abbrivations for commonly mistyped 
 " words
-" iabbr viod void
-" iabbr func function
+ iabbr viod void
+ iabbr func function
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
@@ -46,6 +36,15 @@ nnoremap <C-L> :nohl<CR><C-L>
 " increase decrease current splist window size.
 map + <C-W>+
 map - <C-W>-
+
+" delete all the buffers except open one
+" closed buffers.
+" w | %bd | e#
+"
+
+"move the lines of code up/down with n and m. 
+nmap n :m +1<CR>
+nmap m :m -2<CR>
 "--------------------------------------------------------------------------
 "           
 "           functions 
@@ -177,19 +176,15 @@ set omnifunc=syntaxcomplete#Complete        "enbale onmicomplete for smart autoc
 " Set airline statusline to appear even in single vim editor
 " https://github.com/vim-airline/vim-airline.git
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-
-let g:airline#extensions#tabline#enabled = 1 
 " the separator used on the left side >
 let g:airline_left_sep='>'
 " the separator used on the right side >
  let g:airline_right_sep='<'
-
 " enable modified detection >
   let g:airline_detect_modified=1
-
 " enable paste detection >
   let g:airline_detect_paste=1
 " enable/disable syntastic integration >
