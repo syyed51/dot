@@ -33,6 +33,7 @@ nnoremap <leader>p "_diw"0P
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L> 
+
 " increase decrease current splist window size.
 map + <C-W>+
 map - <C-W>-
@@ -43,8 +44,8 @@ map - <C-W>-
 "
 
 "move the lines of code up/down with n and m. 
-nmap n :m +1<CR>
-nmap m :m -2<CR>
+nmap <leader>n :m +1<CR>
+nmap <leader>m :m -2<CR>
 "--------------------------------------------------------------------------
 "           
 "           functions 
