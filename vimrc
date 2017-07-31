@@ -144,7 +144,7 @@ set smartcase
 " remember this does not work if you change vim directory from within vim.
 set path+=**
 " ignore node_module folder when using find ommand.
-set wildignore+=**/node_modules/**   
+" set wildignore+=**/node_modules/**   
 "change search highlight color
 :highlight IncSearch gui=underline,bold guifg=White guibg=Red3
  
