@@ -1,5 +1,3 @@
- 
- 
 #Change editing mode
 #set -o vi
 #set -o emacs
@@ -26,8 +24,7 @@ alias tehseen='ssh tehseen@10.0.0.5'
 alias asif="ssh admin@10.0.1.9" 
 
 alias rm="rm -i"
-alias ept="cd /Users/tahseen/SEB/epension2/C.Biz.CriticalIllness"
-alias p41="cd /Users/tahseen/SEB/epension2/p41"
+alias ept="cd /Users/tahseen/SEB/epension2/C.Biz.2017LateAugust/SBXReact/ept2/src"
 alias con="cd /Users/tahseen/configfiles"
 alias vc="cd /Users/tahseen/SEB/epension2/venderCode"
 alias dt="cd /Users/tahseen/Desktop"
@@ -50,15 +47,15 @@ alias hidefiles="defaults write com.apple.finder AppleShowAllFiles YES"
 #Increase bash history default history size is 500 commands.
 
 HISTFILESIZE=10000000
-dict () {
+define () {
          curl dict://dict.org/d:"${1}"
      }
 
 #******************
 # Colors for man pages
 #*****************
- 
- export LESS_TERMCAP_mb=$'\E[01;31m'
+
+export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
@@ -130,6 +127,13 @@ export VIMRC=/Users/tahseen/.vimrc
  
  
 export php_executable_path=/usr/bin/php-cgi
+
+
+# enable git bash-completion from file
+source '/Users/tahseen/configfiles/git-completion.bash'
+source '/Users/tahseen/configfiles/git-prompt.sh'
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\w$(__git_ps1 " (%s)")\$ '
 
 # The next line updates  
 # PATH for the Google Cloud SDK.
