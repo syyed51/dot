@@ -1,4 +1,5 @@
-#Change editing mode
+ 
+  #Change editing mode
 #set -o vi
 #set -o emacs
 
@@ -25,7 +26,6 @@ alias con="cd /Users/tahseen/configfiles"
 alias vc="cd /Users/tahseen/SEB/epension2/venderCode"
 alias dt="cd /Users/tahseen/Desktop"
 alias dd="cd /Users/tahseen/Downloads"
-alias git=/usr/local/bin/git
 alias ctags='/usr/local/bin/ctags'
 alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn" # Show me the size (sorted) of only the folders in this directory
 alias ls="ls -GF"
@@ -110,8 +110,8 @@ export php_executable_path=/usr/bin/php-cgi
 
 
 # enable git bash-completion from file
-source '/Users/tahseen/configfiles/git-completion.bash'
-source '/Users/tahseen/configfiles/git-prompt.sh'
+source "/Users/`whoami`/configfiles/git-completion.bash"
+source "/Users/`whoami`/configfiles/git-prompt.sh"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 
