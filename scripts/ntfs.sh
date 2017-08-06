@@ -1,7 +1,7 @@
 #!/bin/bash
 # add 'fstab' file to load NTFS drives
 
-echo "script will add readability options in /etc/fstab file."
+echo "this script will add readability options in /etc/fstab file."
 echo "You will have to remove the file manually, if no longer needed"
 echo "-------NTFS Reader---------"
 echo "___________________________"
