@@ -68,7 +68,8 @@ function! SuperCleverTab()
             "\<C-N>"
         endif
     endif
-endfunction
+ 
+ endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 " See the diff of file on disk and current edited version
