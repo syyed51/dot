@@ -1,6 +1,6 @@
 [core]
 	editor = vimdiff 
-	excludesfile = /Users/tahseen/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [push]
 	default = current
