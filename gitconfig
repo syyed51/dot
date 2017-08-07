@@ -1,21 +1,30 @@
-[color]
-	ui = true
-[push]
-	default = current
 [core]
 	editor = vimdiff 
-	excludesfile = /Users/Tehseen/.gitignore
+	excludesfile = /Users/tahseen/.gitignore_global
+
+[push]
+	default = current
+
 [alias]
 	st = status
     co = checkout
 	ci = commit
 	br = branch
-    rev = revert
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	type = cat-file -t
-	dump = cat-file -p
-    logp='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit'
+
+    lol='git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit'
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+
+[color]  
+    diff = auto  
+    status = auto  
+    branch = auto 
+	ui = auto
+
+[branch]  
+        autosetuprebase = always
+
+
 [user]
 	name = Tehseen
 	email = tehseen.abbas@seb.dk
