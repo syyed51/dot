@@ -1,7 +1,8 @@
 [core]
-	editor = vimdiff 
+	editor = vim
 	excludesfile = ~/.gitignore_global
-
+[diff]
+        tool = vimdiff
 [push]
 	default = current
 
@@ -20,6 +21,16 @@
     status = auto  
     branch = auto 
 	ui = auto
+    
+[color "branch"]
+    current = yelow bold 
+    local = green bold
+    remote = cyan bold
+
+[color "status"]
+        added = green bold
+        changed = yellow bold
+        untracked = red bold
 
 [branch]  
         autosetuprebase = always
