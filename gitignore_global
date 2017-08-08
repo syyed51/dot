@@ -16,3 +16,9 @@ Thumbs.db
 ######################
 *.pbxuser
 *~.nib
+
+
+# User manual files #
+######################
+*.patch
+*~.diff

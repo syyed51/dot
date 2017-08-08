@@ -17,6 +17,8 @@ nmap <Enter> i <Enter> <Esc>
 "map j to formate json files.
 nmap =j :%!python -m json.tool<CR>
 
+"map x for formate xml
+nnoremap <leader>x :%!xmllint --format - <CR>
 
 
 nmap <Enter> i <Enter> <Esc>             
