@@ -53,7 +53,8 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 # make bash tab completion case insensitive. 
 set completion-ignore-case on
-
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
 
 
 # smiley for command status :)
