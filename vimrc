@@ -119,7 +119,7 @@ set expandtab
 set autoindent
 set showcmd         " show the command being types
 set incsearch       " enable instant search
- 
+
  "folding settings
 set foldmethod=syntax   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
@@ -141,6 +141,7 @@ set number
 set relativenumber
 
 set ignorecase
+:set wildignorecase
 set smartcase 
 
 " set vim path dynamically to current working directory
