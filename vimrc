@@ -227,6 +227,10 @@ set conceallevel=1
 " toggle concealing
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
+
+if version < 800
+     set runtimepath-=~/.vim/bundle/ale
+endif
 " async linting
 " https://github.com/w0rp/ale
 "Use ale plugin
