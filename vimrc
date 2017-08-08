@@ -245,9 +245,7 @@ let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
  
 "      ag
-"   the silver searcher for vim
-"   set to be used with vimgrep
-"   https://github.com/ggreer/the_silver_searcher
+" the silver searcher for vim set to be used with vimgrep
 "let g:ackprg = 'ag --vimgrep'
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -255,13 +253,24 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " 
 "          Color schemes / themes
 "__________________________________________________________________________
-"syntax enable
-set background=dark
-"set background=light
-colorscheme solarized
-let g:solarized_termcolors=256
-set guifont=Menlo:h12
 
+" see if vim is running in gui
+"if has('gui_running')
+
+set t_Co=256
+syntax enable
+let g:solarized_termtrans = 1                                                   
+let g:solarized_termcolors=256                                                  
+"set background=light  
+set background=dark
+colorscheme solarized
+
+"set guifont=Menlo:h12
+
+"downgrade colours to use solarized dar colorscheme. Does not look as good as
+"I like.
+
+"":set t_Co=16
 
 "   Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. 
 "   https://github.com/majutsushi/tagbar.git
