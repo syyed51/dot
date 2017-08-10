@@ -37,8 +37,14 @@ alias hidefiles="defaults write com.apple.finder AppleShowAllFiles YES"
 # History 
 #Increase bash history default history size is 500 commands.
 HISTFILESIZE=10000000
+ 
+  
 define () {
          curl dict://dict.org/d:"${1}"
+}
+
+def (){
+    curl -s -A 'Mozilla/4.0'  'http://www.google.com/search?q=define%3A+'${1} | html2text -ascii -nobs -style compact -width 500 | grep "*"
 }
 
 # Colors for man pages
