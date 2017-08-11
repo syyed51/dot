@@ -1,8 +1,10 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
+
 [diff]
         tool = vimdiff
+
 [push]
 	default = current
 
