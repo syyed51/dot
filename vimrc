@@ -43,7 +43,9 @@ map - <C-W>-
 " delete all the buffers except open one
 " closed buffers.
 " w | %bd | e#
-"
+
+" preview markdown files
+nnoremap <leader>p :w<cr>:!pandoc % \| lynx -stdin<cr>:redraw!<cr>
 
 "move the lines of code up/down with n and m. 
 nmap <leader>n :m +1<CR>
