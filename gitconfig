@@ -13,8 +13,8 @@
     co = checkout
 	ci = commit
 	br = branch
-    la = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h(red)%C(red)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(white)%an%C(white) %C(green)(%ar)' --all
-    lo = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(red)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(white)%an%C(white) %C(green)(%ar)'
+    la = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h(red)%C(red)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(white)%an%C(white) %C(green)(%ar)' --date=relative --all
+    lo = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(red)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(white)%an%C(white) %C(green)(%ar)' --date=relative
     lf = log --graph --abbrev-commit --decorate --date=relative --all
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
     viz= "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
