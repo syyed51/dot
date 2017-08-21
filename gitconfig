@@ -20,20 +20,23 @@
     viz= "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
 
 [color]  
-    diff = auto  
-    status = auto  
-    branch = auto 
 	ui = auto
     
 [color "branch"]
-    current = yelow bold 
-    local = green bold
-    remote = cyan bold
+    current = green 
+    local = cyan
+    remote = red
 
-[color "status"]
-        added = green bold
-        changed = yellow bold
-        untracked = red bold
+[color "diff"]
+        meta = yellow bold
+        frag = magenta bold
+        old = red bold
+        new = green bold
+
+[color "status"]    
+        added = yellow
+        changed = green
+        untracked = cyan
 
 [branch]  
         autosetuprebase = always

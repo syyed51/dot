@@ -270,14 +270,14 @@ colorscheme solarized
 
 "set guifont=Menlo:h12
 
-"downgrade colours to use solarized dar colorscheme. Does not look as good as
-"I like.
+"downgrade colours to use solarized dar colorscheme. Does not look as good as I like.
 
-"":set t_Co=16
+":set t_Co=16
 
 "   Tagbar is a Vim plugin that provides an easy way to browse the tags of the current file and get an overview of its structure. 
 "   https://github.com/majutsushi/tagbar.git
 nmap <F8> :TagbarToggle<CR>
+
 "--------------------------------------------------------------------------
 " 
 "          auto commands
@@ -291,3 +291,13 @@ nmap <F8> :TagbarToggle<CR>
  "   au!
  "   au BufWritePost .vimrc so $MYVIMRC 
 "augroup END
+
+"--------------------------------------------------------------------------
+" 
+"                    Info 
+"   commmands that I wish  to remember, but do not wish to add here.
+"__________________________________________________________________________
+"   Read Only buffers
+"   set ro      " make a buffer read only,
+"   set noro    " make a buffer editable,
+"__________________________________________________________________________
