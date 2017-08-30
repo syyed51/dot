@@ -157,13 +157,18 @@ set path+=**
 set backspace=indent,eol,start  
  
 set nostartofline
-" set nospell 
 
+"setup temp file directory.
 set directory=~/.vim/swapfiles/
 
 " I like to see my cursor position like :)
 set cursorline
 set cursorcolumn
+
+" Ignore white space while taking diff 
+if &diff
+set diffopt+=iwhite
+endif
 "--------------------------------------------------------------------------
 " 
 "          Plugins 
@@ -300,4 +305,36 @@ nmap <F8> :TagbarToggle<CR>
 "   Read Only buffers
 "   set ro      " make a buffer read only,
 "   set noro    " make a buffer editable,
+"   set nospell 
+
+""--------------------------------------------------------------------------
+" 
+"          VIM DIFF  
+"           Tutorial
+"__________________________________________________________________________
+
+" Start in diff mode 
+" vimdiff file1 file2 [file3 [file4]]
+"vim -d file1 file2 [file3 [file4]]
+"
+"
+"Vertical diff 
+"vimdiff -o file1 file2 [file3 [file4]]
+"
+"take diff white in normal mode
+" 1. diffthis
+" 2. diffsplit
+" 3. diffpatch
+"
+" Switch mode
+" :diffoff
+" :diffoff!
+"
+"   Update diff
+" :diffupdate
+"
+"  next change               ]c
+"  previous change           [c 
+"  diff obtain              do
+"  diff put                 dp
 "__________________________________________________________________________
