@@ -115,9 +115,15 @@ endif
  
  "default indent settings
 set shiftwidth=4 
-set softtabstop=4   " number of visual spaces per TAB
+set softtabstop=8   " number of visual spaces per TAB
 set tabstop=4       " number of spaces per TAB
 set expandtab
+if exists('+colorcolumn')
+    set colorcolumn=80
+else
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 set autoindent
 set showcmd         " show the command being types
 set incsearch       " enable instant search
