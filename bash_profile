@@ -7,7 +7,7 @@
 ############################################################
 #                       TIPS
 #
-#   1. Use \command to override an alias e.g "$ \ls" this will execute bash command instead alias of same name
+#   1. Use command to override an alias e.g "$command ls" this will execute bash command instead alias of same name
 #
 #
 ############################################################ 
@@ -29,6 +29,7 @@ alias dd="cd /Users/'whoami'/Downloads"
 alias ctags='/usr/local/bin/ctags'
 alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn" # Show me the size (sorted) of only the folders in this directory
 alias ls="ls -GF"
+alias lsl="ls -lGF"
 alias commandments="history | awk '{print $2}' | awk 'BEGIN {FS=\"|\"}{print $1}' | sort | uniq -c | sort -nr | head"
 alias reload="sudo killall Finder $$ open /System/Library/CoreServices/Finder.app"
 alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES"
