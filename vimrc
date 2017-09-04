@@ -344,3 +344,69 @@ nmap <F8> :TagbarToggle<CR>
 "  diff obtain              do
 "  diff put                 dp
 "__________________________________________________________________________
+"
+"           List of VIM lists
+"__________________________________________________________________________
+"
+"   Jump list
+"       Jumps taken with movement commands.
+"   show            ju[mps]
+"   next            <C-o>
+"   previous        <C-i>
+"
+"   Change list
+"       Each undoable change made in buffer.
+"   show            :changes
+"   old             g;
+"   new             g,
+"
+"   Quickfix list
+"       A list of locations across the files.
+"   open            :cope[n]
+"   close           :ccl[ose]
+"   next            :cn[ext]         / ]q
+"   previous        :cp[revious]     / [q 
+"   first           :cfir[st]        / ]Q
+"   last            :cla[st]         / [Q
+"
+"   Location list
+"        A window local quickfix list
+"   open            :lope[n]         
+"   close           :lcl[ose]
+"   next            :lne[xt]         / ]l       
+"   previous        :lp[revious]     / [l       
+"   first           :lfir[st]        / ]L
+"   last            :lla[st]         / [L
+"
+"
+"   Buffer list
+"       Files open in vim
+"   open            :buffers         / ls
+"   next            :bn[ext]         / ]b
+"   previous        :bp[revious]     / [b       
+"   first           :bf[irst]        / ]B
+"   last            :bl[last]        / [B
+"
+"   Argument list
+"       List of arguments passed to vim
+"   open            :ar[gs]
+"   next            :n[ext]          / ]a
+"   previous        :prev[ious]      / [a       
+"   first           :fir[irst]       / ]A
+"   last            :la[st]          / [A
+"
+"   Tag stack
+"       Tag jumps
+"   Show            :tags
+"   Previous        :po[p] / <C-t>
+"   Next            :ta[g]
+"
+"   Tag match list
+"       When there are multiple matches for a tag.
+"   Show            :ts[elect]
+"   Previous        :tp[revious]     / [t*
+"   Next            :tn[ext]         / ]t*
+"   First           :tf[irst]        / [T*
+"   Last            :tl[ast]         / ]T*
+"
+"
