@@ -318,24 +318,49 @@ nmap <F8> :TagbarToggle<CR>
 "          VIM DIFF  
 "           Tutorial
 "__________________________________________________________________________
-
 " Start in diff mode 
 " vimdiff file1 file2 [file3 [file4]]
 "vim -d file1 file2 [file3 [file4]]
-"
-"
+
+
 "Vertical diff 
 "vimdiff -o file1 file2 [file3 [file4]]
-"
+
 "take diff white in normal mode
 " 1. diffthis
 " 2. diffsplit
 " 3. diffpatch
-"
+
 " Switch mode
 " :diffoff
 " :diffoff!
-"
+
+"   Update diff
+" :diffupdate
+
+"  next change               ]c
+"  previous change           [c 
+"  diff obtain              do
+"  diff put                 dp
+"__________________________________________________________________________
+
+" Start in diff mode 
+" vimdiff file1 file2 [file3 [file4]]
+"vim -d file1 file2 [file3 [file4]]
+
+
+"Vertical diff 
+"vimdiff -o file1 file2 [file3 [file4]]
+
+"take diff white in normal mode
+" 1. diffthis
+" 2. diffsplit
+" 3. diffpatch
+
+" Switch mode
+" :diffoff
+" :diffoff!
+
 "   Update diff
 " :diffupdate
 "
@@ -343,4 +368,69 @@ nmap <F8> :TagbarToggle<CR>
 "  previous change           [c 
 "  diff obtain              do
 "  diff put                 dp
+
 "__________________________________________________________________________
+"
+"           List of VIM lists
+"__________________________________________________________________________
+
+"1.    Jump list
+"       Jumps taken with movement commands.
+"   show            ju[mps]
+"   next            <C-o>
+"   previous        <C-i>
+
+"2.    Change list
+"       Each undoable change made in buffer.
+"   show            :changes
+"   old             g;
+"   new             g,
+
+"3.    Quickfix list
+"       A list of locations across the files.
+"   open            :cope[n]
+"   close           :ccl[ose]
+"   next            :cn[ext]         / ]q
+"   previous        :cp[revious]     / [q 
+"   first           :cfir[st]        / ]Q
+"   last            :cla[st]         / [Q
+
+"4.    Location list
+"        A window local quickfix list
+"   open            :lope[n]         
+"   close           :lcl[ose]
+"   next            :lne[xt]         / ]l       
+"   previous        :lp[revious]     / [l       
+"   first           :lfir[st]        / ]L
+"   last            :lla[st]         / [L
+
+"5.    Buffer list
+"       Files open in vim
+"   open            :buffers         / ls
+"   next            :bn[ext]         / ]b
+"   previous        :bp[revious]     / [b       
+"   first           :bf[irst]        / ]B
+"   last            :bl[last]        / [B
+
+"5.    Argument list
+"       List of arguments passed to vim
+"   open            :ar[gs]
+"   next            :n[ext]          / ]a
+"   previous        :prev[ious]      / [a       
+"   first           :fir[irst]       / ]A
+"   last            :la[st]          / [A
+
+"6.    Tag stack
+"       Tag jumps
+"   Show            :tags
+"   Previous        :po[p] / <C-t>
+"   Next            :ta[g]
+
+"7.    Tag match list
+"       When there are multiple matches for a tag.
+"   Show            :ts[elect]
+"   Previous        :tp[revious]     / [t*
+"   Next            :tn[ext]         / ]t*
+"   First           :tf[irst]        / [T*
+"   Last            :tl[ast]         / ]T*
+
