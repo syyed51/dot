@@ -8,34 +8,12 @@
 #                       TIPS
 #
 #   1. Use command to override an alias e.g "$command ls" this will execute bash command instead alias of same name
-#
-#
-############################################################ 
 
 
-#*********************
-# Aliases
-#********************
- 
-alias cls="clear&&ls"
-alias tehseen='ssh tehseen@10.0.0.5'
-alias asif="ssh admin@10.0.1.9" 
-alias rm="rm -i"
-alias ept="cd /Users/tahseen/SEB/ept/C.Biz.2017LateAugust/SBXReact/ept2/src"
-alias con="cd /Users/`whoami`/configfiles"
-alias vc="cd /Users/'whoami'/SEB/epension2/venderCode"
-alias dt="cd /Users/'whoami'/Desktop"
-alias dd="cd /Users/'whoami'/Downloads"
-alias ctags='/usr/local/bin/ctags'
-alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn" # Show me the size (sorted) of only the folders in this directory
-alias ls="ls -GF"
-alias lsl="ls -lGF"
-alias commandments="history | awk '{print $2}' | awk 'BEGIN {FS=\"|\"}{print $1}' | sort | uniq -c | sort -nr | head"
-alias reload="sudo killall Finder $$ open /System/Library/CoreServices/Finder.app"
-alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES"
-alias hidefiles="defaults write com.apple.finder AppleShowAllFiles YES"
+if [-f ./aliases_std]
+    source ./aliases_std
+fi
 
-# History 
 #Increase bash history default history size is 500 commands.
 HISTFILESIZE=10000000
  
