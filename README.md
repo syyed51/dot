@@ -1,9 +1,6 @@
 # configfiles
-These are my config files. 
+
+Idea of this repositry is to keep track and share my config file. 
 
 
-here is list of files, I wish to keep in sync
-
-1. gitconfig file
-2. vimrc
-3. scripts
+Feel free to reuse and share
