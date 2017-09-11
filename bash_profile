@@ -1,5 +1,5 @@
  
-  #Change editing mode
+#Change editing mode
 #set -o vi
 #set -o emacs
 
@@ -10,8 +10,8 @@
 #   1. Use command to override an alias e.g "$command ls" this will execute bash command instead alias of same name
 
 
-if [-f ./aliases_std]
-    source ./aliases_std
+if [ -f "/Users/`whoami`/configfiles/aliases_std" ]; then
+    source "/Users/`whoami`/configfiles/aliases_std"
 fi
 
 #Increase bash history default history size is 500 commands.
