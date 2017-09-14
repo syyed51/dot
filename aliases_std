@@ -23,8 +23,8 @@ alias po=popd
 alias pu=pushd
 alias rd=rmdir
 
-alias ...=cd ../..
-alias ....=cd ../../..
+alias "...=cd ../.."
+alias "....=cd ../../.."
 alias _=sudo
 alias afind='ack -il'
 alias d='dirs -v | head -10'
