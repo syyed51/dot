@@ -303,8 +303,6 @@ nmap <F8> :TagbarToggle<CR>
  "   au BufWritePost .vimrc so $MYVIMRC 
 "augroup END
 
-"--------------------------------------------------------------------------
-" 
 "                    Info 
 "   commmands that I wish  to remember, but do not wish to add here.
 "__________________________________________________________________________
@@ -312,7 +310,9 @@ nmap <F8> :TagbarToggle<CR>
 "   set ro      " make a buffer read only,
 "   set noro    " make a buffer editable,
 "   set nospell 
-
+"       
+"       make session
+"       :mks ept.vim
 ""--------------------------------------------------------------------------
 " 
 "          VIM DIFF  
