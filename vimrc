@@ -213,13 +213,13 @@ let g:airline_left_sep='>'
 "Syntax highlighting and indenting for JSX. JSX is a JavaScript syntax
 "transformer which translates inline XML document fragments into JavaScript
 "objects. It was developed by Facebook alongside React.
-let g:jsx_ext_required = 0
+"let g:jsx_ext_required = 0
 
 " vim javascript
 " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
 "https://github.com/pangloss/vim-javascript.git
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
+"let g:javascript_plugin_jsdoc = 1
+"let g:javascript_plugin_ngdoc = 1
 
 "Concealing Characters
 let g:javascript_conceal_function             = "ƒ"
