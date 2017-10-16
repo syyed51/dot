@@ -14,8 +14,8 @@
 	st = status
     co = checkout
 	ci = commit
-	br = branch
-    ll = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h(red)%C(red)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(white)%an%C(white) %C(green)(%ar)' --date=relative --all
+	br = !branches.sh
+    la = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h(red)%C(red)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(white)%an%C(white) %C(green)(%ar)' --date=relative --all
     lo = log --graph --abbrev-commit --decorate --format=format:'%C(red)%h%C(red)%C(auto)%d%C(reset) %C(normal)%s%C(reset) %C(white)%an%C(white) %C(green)(%ar)' --date=relative
     la = log --graph --abbrev-commit --decorate --oneline --date=relative --all
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
