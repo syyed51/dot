@@ -260,8 +260,8 @@ let g:ale_sign_warning = '--'
  
 "      ag
 " the silver searcher for vim set to be used with vimgrep
-"let g:ackprg = 'ag --vimgrep'
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --vimgrep'
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "--------------------------------------------------------------------------
 " 
