@@ -3,6 +3,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global
+    ignorecase = false
 
 [diff]
         tool = vimdiff
@@ -43,8 +44,12 @@
 [branch]  
         autosetuprebase = always
 
-[user]
 [gpg]
 	program = /usr/local/bin/gpg
+
 [credential]
 	helper = osxkeychain
+
+[user]
+	name = Tehseen
+	email = tehseen.abbas@seb.dk

@@ -14,11 +14,11 @@ Thumbs.db
 
 # Xcode generated files #
 ######################
-*.pbxuser
-*~.nib
-
+#*.pbxuser
+#*~.nib
+#*.xcuserdatad*
 
 # User manual files #
 ######################
-*.patch
-*~.diff
+#*.patch
+#*~.diff
