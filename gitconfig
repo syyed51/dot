@@ -1,55 +1,59 @@
 [global]
     gpg = $(which gpg)
+
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
-    ignorecase = false
+    editor = vim
+    excludesfile = ~/.gitignore_global
+    ignorecase = true
 
 [diff]
-        tool = vimdiff
+    tool = vimdiff
 
 [push]
-	default = current
+    default = current
 
 [alias]
-	st = status
+    st = status
     co = checkout
-	ci = commit
-	br = !branches.sh
-    la = log --graph --abbrev-commit --decorate --format=format:'%C(dim green)%h)%C(reset)%s %C(dim green) %an %C(dim white)(%ar)' --date=relative --all
-    lo = log --graph --abbrev-commit --decorate --format=format:'%C(dim green)%h)%C(reset)%s %C(dim green) %an %C(dim white)(%ar)' --date=relative
-    lx = log --graph --abbrev-commit --decorate --oneline --date=relative --all
+    ci = commit
+    br = !branches.sh
+    ls = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %C(auto)%D %C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative --all
+    lo = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %C(auto)%D %C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative 
+    la = log --graph --abbrev-commit --decorate --oneline --date=relative --all
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
     viz= "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+    sup = submodule update --init --recursive
+    clz = clone --recursive
+    diff  = diff --word-diff
 
-[color]  
-	ui = auto
-    
+[color]
+    ui = auto
+
 [color "branch"]
     current = green 
     local = cyan
     remote = red
 
 [color "diff"]
-        meta = yellow bold
-        frag = magenta bold
-        old = red bold
-        new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 
 [color "status"]    
-        added = yellow
-        changed = green
-        untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 
 [branch]  
-        autosetuprebase = always
+    autosetuprebase = always
 
 [gpg]
-	program = /usr/local/bin/gpg
+    program = /usr/local/bin/gpg
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
 [user]
-	name = Tehseen
-	email = tehseen.abbas@seb.dk
+    name = Tehseen
+    email = tehseen.abbas@seb.dk

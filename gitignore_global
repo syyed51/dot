@@ -14,9 +14,9 @@ Thumbs.db
 
 # Xcode generated files #
 ######################
-#*.pbxuser
-#*~.nib
-#*.xcuserdatad*
+*.pbxuser
+*~.nib
+*.xcuserdatad*
 
 # User manual files #
 ######################
