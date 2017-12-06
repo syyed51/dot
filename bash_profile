@@ -101,6 +101,9 @@ source "/Users/`whoami`/configfiles/git-prompt.sh"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 
+#setup config file
+source "/Users/`whoami`/configfiles/scripts/setup.sh"
+
 # The next line updates  
 # PATH for the Google Cloud SDK.
 if [ -f /Users/tahseen/Downloads/google-cloud-sdk/path.bash.inc ]; then

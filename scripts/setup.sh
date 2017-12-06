@@ -1,10 +1,16 @@
 #!/bin/bash
 
-mkdir ~/backup
-mv ~/.gitconfig ~/backup/
-mv ~/.gitignore ~/backup/
-mv ~/.bash_profile ~/backup/
-mv ~/.vimrc ~/backup/
+if [ ! -d ~/backup ]  
+then
+    mkdir -p ~/backup
+else
+    rm -rf ~/backup/*
+fi
+
+mv -f  ~/.gitconfig ~/backup/gitconfig
+mv -f ~/.gitignore ~/backup/gitignore
+mv -f ~/.bash_profile ~/backup/bash_profile
+mv -f ~/.vimrc ~/backup/vimrc
 
 
 ln -s ~/configfiles/gitconfig ~/.gitconfig
