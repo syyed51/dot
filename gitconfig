@@ -3,8 +3,8 @@
 
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
-    ignorecase = true
+    excludesfile = ~/.gitignore
+    ignorecase = false
 
 [diff]
     tool = vimdiff
