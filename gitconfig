@@ -15,7 +15,7 @@
 [alias]
     st = status
     co = checkout
-    ci = commit
+    ci = commit --verbose
     br = !branches.sh
     ls = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %C(auto)%D%C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative --all
     lo = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %C(auto)%D%C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative 

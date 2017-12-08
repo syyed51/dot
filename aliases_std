@@ -39,3 +39,5 @@ alias la='ls -lAh'
 alias ll='ls -lh'
 alias ls='ls -GF'
 alias las="ls -aGF"
+
+alias "?=which -a"
