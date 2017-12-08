@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# thanks https://stackoverflow.com/questions/4102151/how-grep-through-your-staged-files-prior-to-committing/4102252#4102252
+filesWithNocommit="$(git diff-index --cached HEAD --name-only -G[nN][oO][cC][oO][mM][mM][iI][tT])"
+
+if [ -n "$filesWithNocommit" ]; then
+  echo "'NOCOMMIT' found. Please clean up the following files before committing:" 1>&2
+  printf "\n%s\n\n" "$(echo "$filesWithNocommit" | sed 's/^/	/g')" 1>&2
+
+  exit 1
+fi
