@@ -1,6 +1,11 @@
 alias cls="clear&&ls"
 alias tehseen='ssh tehseen@10.0.0.5'
 alias asif="ssh admin@10.0.1.9" 
+alias clarentoffice="ssh administrator@171.25.43.150" 
+alias clarentseb="ssh administrator@10.0.1.22" 
+alias ianseb="ssh tester@172.25.43.195" 
+alias ianoffice2="ssh tester@10.0.1.142" 
+alias ianappdev="ssh tester@172.17.149.92" 
 alias rm="rm -i"
 alias ept="cd /Users/`whoami`/SEB/ept/C.Biz.2017LateSeptember/SBXReact/ept2/src"
 alias introflow="cd /Users/`whoami`/SEB/introflow"
