@@ -4,13 +4,13 @@
 if [ ! -d ~/backup ]  
 then
     mkdir -p ~/backup
-else
-    rm -rf ~/backup/gitconfig
-    rm -rf ~/.backup/gitignore
 fi
 
-mv -f  ~/.gitconfig ~/backup/gitconfig
-mv -f ~/.gitignore ~/backup/gitignore
+if [ ! -d ~/.git_templates/hooks ]  
+then
+    mkdir -p ~/.git_templates/hooks
+fi
 
-ln -s ~/configfiles/gitconfig ~/.gitconfig
-ln -s ~/configfiles/gitignore_global ~/.gitignore
+ln -fs ~/dotfiles       /gitconfig ~/.gitconfig
+ln -fs ~/dotfiles       /gitignore_global ~/.gitignore
+ln -fs ~/dotfiles       /git/hooks/pre-commit ~/.git_templates/hooks/

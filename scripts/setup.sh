@@ -1,11 +1,11 @@
 #!/bin/bash
 
-export PATH=$PATH:~/configfiles/scripts 
+export PATH=$PATH:~/dotfiles/scripts 
 chmod +x .
 
-. ~/configfiles/scripts/setup_git.sh
-. ~/configfiles/scripts/setup_bash.sh
-. ~/configfiles/scripts/setup_vim.sh
+. ~/dotfiles/scripts/setup_git.sh
+. ~/dotfiles/scripts/setup_bash.sh
+. ~/dotfiles/scripts/setup_vim.sh
 
 
 

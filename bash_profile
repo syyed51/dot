@@ -10,8 +10,8 @@
 #   1. Use command to override an alias e.g "$command ls" this will execute bash command instead alias of same name
 
 
-if [ -f "/Users/`whoami`/configfiles/aliases_std" ]; then
-    source "/Users/`whoami`/configfiles/aliases_std"
+if [ -f "/Users/`whoami`/dotfiles/aliases_std" ]; then
+    source "/Users/`whoami`/dotfiles/aliases_std"
 fi
 
 #Increase bash history default history size is 500 commands.
@@ -96,13 +96,13 @@ export php_executable_path=/usr/bin/php-cgi
 
 
 # enable git bash-completion from file
-source "/Users/`whoami`/configfiles/git-completion.bash"
-source "/Users/`whoami`/configfiles/git-prompt.sh"
+source "/Users/`whoami`/dotfiles/git-completion.bash"
+source "/Users/`whoami`/dotfiles/git-prompt.sh"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 
 #setup config file
-source "/Users/`whoami`/configfiles/scripts/setup.sh"
+source "/Users/`whoami`/dotfiles/scripts/setup.sh"
 
 # The next line updates  
 # PATH for the Google Cloud SDK.

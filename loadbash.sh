@@ -1,2 +1,2 @@
 bash
-source ~/configfiles/bash_profile
+source ~/dotfiles/bash_profile

@@ -4,7 +4,7 @@
 filesWithNocommit="$(git diff-index --cached HEAD --name-only -G[nN][oO][cC][oO][mM][mM][iI][tT])"
 
 if [ -n "$filesWithNocommit" ]; then
-  echo "'NOCOMMIT' found. Please clean up the following files before committing:" 1>&2
+  echo "'NOCOMMIT' tag found in following file. Please clean up." 1>&2
   printf "\n%s\n\n" "$(echo "$filesWithNocommit" | sed 's/^/	/g')" 1>&2
 
   exit 1

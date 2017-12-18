@@ -9,4 +9,4 @@ else
 fi
 
 mv -f ~/.vimrc ~/backup/vimrc
-ln -s ~/configfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/vimrc ~/.vimrc

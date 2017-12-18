@@ -54,7 +54,7 @@ ZSH_THEME="robbyrussell"
 # plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ./configfiles/aliases_std
+source ./dotfiles/aliases_std
 
 # User configuration
 

@@ -1,4 +1,4 @@
-# configfiles
+# dotfiles      
 
 Idea of this repositry is to keep track and share my config file. 
 

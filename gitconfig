@@ -57,3 +57,6 @@
 [user]
     name = Tehseen
     email = tehseen.abbas@seb.dk
+
+[init]
+	templatedir = ~/.git-templates
