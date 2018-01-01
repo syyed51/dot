@@ -11,6 +11,6 @@ then
     mkdir -p ~/.git_templates/hooks
 fi
 
-ln -fs ~/dotfiles       /gitconfig ~/.gitconfig
-ln -fs ~/dotfiles       /gitignore_global ~/.gitignore
-ln -fs ~/dotfiles       /git/hooks/pre-commit ~/.git_templates/hooks/
+ln -fs ~/dotfiles/gitconfig ~/.gitconfig
+ln -fs ~/dotfiles/gitignore_global ~/.gitignore
+ln -fs ~/dotfiles/git/hooks/pre-commit ~/.git_templates/hooks/
