@@ -13,4 +13,8 @@ fi
 
 ln -fs ~/dotfiles/gitconfig ~/.gitconfig
 ln -fs ~/dotfiles/gitignore_global ~/.gitignore
+
+# Note
+# Rememnber to reinitialize the repo, to use hooks.
+# git init
 ln -fs ~/dotfiles/git/hooks/pre-commit ~/.git_templates/hooks/

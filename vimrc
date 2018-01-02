@@ -199,13 +199,14 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " the separator used on the left side >
 let g:airline_left_sep='>'
 " the separator used on the right side >
- let g:airline_right_sep='<'
+let g:airline_right_sep='<'
 " enable modified detection >
-  let g:airline_detect_modified=1
+let g:airline_detect_modified=1
 " enable paste detection >
-  let g:airline_detect_paste=1
+let g:airline_detect_paste=1
 " enable/disable syntastic integration >
-  let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:statusline:%{fugitive#statusline()}
 
 
 "vim-jsx
@@ -243,21 +244,21 @@ map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<
 
 
 if version < 800
-     set runtimepath-=~/.vim/bundle/ale
+    set runtimepath-=~/.vim/bundle/ale
 endif
 " async linting
 " https://github.com/w0rp/ale
 "Use ale plugin
 " use specific linter for specific file type.
- let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+let g:ale_linters = {
+            \   'javascript': ['eslint'],
+            \}
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
- 
+
 "      ag
 " the silver searcher for vim set to be used with vimgrep
 let g:ackprg = 'ag --vimgrep'
@@ -299,8 +300,8 @@ nmap <F8> :TagbarToggle<CR>
 " auto reload vim, when there are changes in .vimrc
 "
 "augroup myvimrc
- "   au!
- "   au BufWritePost .vimrc so $MYVIMRC 
+"   au!
+"   au BufWritePost .vimrc so $MYVIMRC 
 "augroup END
 
 "                    Info 
