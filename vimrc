@@ -206,7 +206,7 @@ let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 " enable/disable syntastic integration >
 let g:airline#extensions#syntastic#enabled = 1
-let g:statusline:%{fugitive#statusline()}
+"let g:statusline:%{fugitive#statusline()}
 
 
 "vim-jsx
