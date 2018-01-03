@@ -25,6 +25,9 @@
     sup = submodule update --init --recursive
     clz = clone --recursive
     diff  = diff --word-diff
+    fl = diff-tree --no-commit-id --name-only -r
+    fa = show --stat --oneline
+    ff = show --name-only --oneline
 
 [color]
     ui = auto

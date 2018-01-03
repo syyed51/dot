@@ -115,3 +115,5 @@ if [ -f /Users/tahseen/Downloads/google-cloud-sdk/completion.bash.inc ]; then
   source '/Users/tahseen/Downloads/google-cloud-sdk/completion.bash.inc'
 fi
 
+export PATH=/usr/local/openssl/bin:$PATH
+export MANPATH=/usr/local/openssl/share/man:$MANPATH

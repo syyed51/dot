@@ -11,10 +11,6 @@ then
     mkdir -p ~/.git_templates/hooks
 fi
 
-ln -fs ~/dotfiles/gitconfig ~/.gitconfig
-ln -fs ~/dotfiles/gitignore_global ~/.gitignore
-
-# Note
-# Rememnber to reinitialize the repo, to use hooks.
-# git init
-ln -fs ~/dotfiles/git/hooks/pre-commit ~/.git_templates/hooks/
+ln -fs ~/configfiles/gitconfig ~/.gitconfig
+ln -fs ~/configfiles/gitignore_global ~/.gitignore
+ln -fs ~/configfiles/git/hooks/pre-commit ~/.git_templates/hooks/

@@ -55,7 +55,7 @@ nmap <leader>m :m -2<CR>
 "           functions 
 "__________________________________________________________________________
  
- " Setup Omni complete on tab key
+" Setup Omni complete on tab key
 function! SuperCleverTab()
     if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
         return "\<Tab>"
@@ -72,7 +72,7 @@ function! SuperCleverTab()
             "\<C-N>"
         endif
     endif
- 
+
  endfunction
 
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
