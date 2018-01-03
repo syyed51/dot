@@ -43,7 +43,7 @@ alias history='fc -l 1'
 alias l='ls -lah'
 alias la='ls -lAh'
 alias ll='ls -lh'
-alias ls='ls -GF'
+alias ls='ls -rtGF'
 alias las="ls -aGF"
 
 alias "?=which -a"

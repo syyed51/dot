@@ -63,3 +63,5 @@
 
 [init]
 	templatedir = ~/.git-templates
+[merge]
+	tool = opendiff
