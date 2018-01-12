@@ -4,7 +4,7 @@
 CURRENT_DEVICE=$(networksetup -listallhardwareports | awk '$3=="Wi-Fi" {getline; print $2}')
 WIFI_STATUS=$(networksetup -getairportpower $CURRENT_DEVICE)
 
-echo 
+echo  This is a test 
 
 if echo "$WIFI_STATUS" | grep On
 then

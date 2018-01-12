@@ -1,5 +1,6 @@
 #! /bin/bash
 
 #Restart computer
-
-$(sudo shutdown -r now)
+CMD="ls"
+echo "$CMD"
+"$($CMD)"
