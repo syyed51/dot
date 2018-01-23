@@ -13,4 +13,4 @@ fi
 
 ln -fs ~/dotfiles/gitconfig ~/.gitconfig
 ln -fs ~/dotfiles/gitignore_global ~/.gitignore
-ln -fs ~/dotfiles/git/hooks/pre-commit ~/.git_templates/hooks/
+ln -fs ~/dotfiles/hooks/pre-commit ~/.git_templates/hooks/
