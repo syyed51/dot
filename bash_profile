@@ -96,8 +96,8 @@ export php_executable_path=/usr/bin/php-cgi
 
 
 # enable git bash-completion from file
-source "/Users/`whoami`/dotfiles/git/git-completion.bash"
-source "/Users/`whoami`/dotfiles/git/git-prompt.sh"
+source "/Users/`whoami`/dotfiles/git-completion.bash"
+source "/Users/`whoami`/dotfiles/git-prompt.sh"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\w$(__git_ps1 " (%s)")\$ '
 
