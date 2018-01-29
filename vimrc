@@ -14,7 +14,7 @@ nmap <Enter> i <Enter> <Esc>
  nnoremap Q gq}
 "
 
-"map j to formate json files.
+"map j to format/validate json files.
 nmap =j :%!python -m json.tool<CR>
 
 "map x for formate xml
