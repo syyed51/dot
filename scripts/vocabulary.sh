@@ -1,4 +1,4 @@
-#/bin/bash 
+#!/bin/bash 
 
 declare -a Line
 # script to learn/practice dictionary words.
@@ -15,11 +15,12 @@ Line[10]="Occurrence"
 Line[11]="Sincerely"
 Line[12]="Surreal"
 Line[13]="Synonyms"
+Line[14]="Mutany"
 
 SKIP=s
 QUIT=q
 
-for index in {1..13}
+for index in {1..14}
 do
     WORD=${Line[index]}
     say $WORD
