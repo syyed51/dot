@@ -204,6 +204,8 @@ set cursorcolumn
 if &diff
 set diffopt+=iwhite
 endif
+
+autocmd BufRead,BufNewFile *.md setlocal spell
 "--------------------------------------------------------------------------
 " 
 "          Plugins 
@@ -340,8 +342,14 @@ nmap <F8> :TagbarToggle<CR>
 " 2. ":help help" => show help about getting help
 
 
-
-
+" Enable spell checker.
+"set spell spelllang=en_us
+"set nospell
+" goto next misspell "]s"
+" goto previous misspell "[s"
+" once on a misspell "z=" to get suggestions.
+" autocmd BufRead,BufNewFile *.md setlocal spell " enable spell check for md
+" files.
 
 "--------------------------------------------------------------------------
 "                          Code folding
