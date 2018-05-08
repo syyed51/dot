@@ -1,4 +1,5 @@
-"--------------------------------------------------------------------------
+ 
+ "--------------------------------------------------------------------------
 " 
 "           Key Mapping
 "
@@ -54,7 +55,24 @@ nmap <leader>m :m -2<CR>
 "           
 "           functions 
 "__________________________________________________________________________
- 
+
+" goto next, previous fold
+nnoremap <silent> <leader>zj :call NextClosedFold('j')<cr>
+nnoremap <silent> <leader>zk :call NextClosedFold('k')<cr>
+function! NextClosedFold(dir)
+    let cmd = 'norm!z' . a:dir
+    let view = winsaveview()
+    let [l0, l, open] = [0, view.lnum, 1]
+    while l != l0 && open
+        exe cmd
+        let [l0, l] = [l, line('.')]
+        let open = foldclosed(l) < 0
+    endwhile
+    if open
+        call winrestview(view)
+    endif
+endfunction
+
 " Setup Omni complete on tab key
 function! SuperCleverTab()
     if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
@@ -129,24 +147,37 @@ set showcmd         " show the command being types
 set incsearch       " enable instant search
 
  "folding settings
-set foldmethod=syntax   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
+set foldmethod=syntax               "fold based on indent
+set foldnestmax=3                   "deepest fold is 3 levels
+set nofoldenable                    "dont fold by default
 
-set wildmode=list:longest   "make cmdline tab completion similar to bash
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set nowrapscan                  "do not wrap around search 
-set formatoptions-=o "dont continue comments when pushing o/O
+set wildmode=list:longest           " make cmdline tab completion similar to bash
+
+" configure 'find' command for vim.
+"              ignore certain files when 'find' ing in vim
+"              eg. find package.json (:find package.json)
+
+set wildmenu                        " enable ctrl-n and ctrl-p to scroll thru matches
+set wildignore=*.o,*.obj,*~         " ignore dynamically generated files.
+set wildignore+=**/node_modules/**  " ignore node_module in node porjects
+set wildignore+=*.swp,*.bak         " ignore vim swap and backup files.
+set wildignore+=*/.git/**/*         " ignore .git and its contents
+set wildignore+=*/.svn/**/*         " ignore .svn and its contents.
+set wildignore+=tags,cscope.*       " ignore tags
+set wildignore+=*.tar.*             " ignore tar files.
+"set wildignore+=*.pyc,*.class,*.sln,*.Master,*.csproj,*.csproj.user,*.cache,*.dll,*.pdb,*.min.*
+
+set nowrapscan                      "do not wrap around search 
+set formatoptions-=o                "dont continue comments when pushing o/O
 
 "vertical/horizontal scroll off settings
 set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
  
-"Line numbers
-set number
-set relativenumber
+
+set number                          "show line numbers
+set relativenumber                  " current line number is relative
 
 set ignorecase
 :set wildignorecase
@@ -155,8 +186,6 @@ set smartcase
 " set vim path dynamically to current working directory
 " remember this does not work if you change vim directory from within vim.
 set path+=**
-" ignore node_module folder when using find ommand.
-" set wildignore+=**/node_modules/**   
 "change search highlight color
 :highlight IncSearch gui=underline,bold guifg=White guibg=Red3
  
@@ -188,8 +217,10 @@ execute pathogen#infect()
 filetype plugin indent on
 syntax on
 set omnifunc=syntaxcomplete#Complete        "enbale onmicomplete for smart autocompletion.
- 
- 
+
+"User tern based javascript autocompletion
+"tern#true
+
 " Set airline statusline to appear even in single vim editor
 " https://github.com/vim-airline/vim-airline.git
 set laststatus=2
@@ -214,8 +245,15 @@ let g:airline#extensions#syntastic#enabled = 1
 "Syntax highlighting and indenting for JSX. JSX is a JavaScript syntax
 "transformer which translates inline XML document fragments into JavaScript
 "objects. It was developed by Facebook alongside React.
-"let g:jsx_ext_required = 0
+let g:jsx_ext_required = 0
 
+"configure emment to use tab completion
+"let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.js' : {
+    \      'extends' : 'js',
+    \  },
+  \}
 " vim javascript
 " JavaScript bundle for vim, this bundle provides syntax highlighting and improved indentation.
 "https://github.com/pangloss/vim-javascript.git
@@ -245,6 +283,9 @@ map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<
 
 if version < 800
     set runtimepath-=~/.vim/bundle/ale
+    let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+    let g:ale_sign_warning = '.'
+    let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 endif
 " async linting
 " https://github.com/w0rp/ale
@@ -274,7 +315,7 @@ let g:ackprg = 'ag --vimgrep'
 
 set t_Co=256
 syntax enable
-let g:solarized_termtrans = 1                                                   
+"let g:solarized_termtrans = 1                                                   
 let g:solarized_termcolors=256                                                  
 "set background=light  
 set background=dark
@@ -290,6 +331,26 @@ colorscheme solarized
 "   https://github.com/majutsushi/tagbar.git
 nmap <F8> :TagbarToggle<CR>
 
+"--------------------------------------------------------------------------
+"                          Tutorial section
+"--------------------------------------------------------------------------
+
+" Help
+" 1. "shift + k" => show help page for keyword under the cursor
+" 2. ":help help" => show help about getting help
+
+
+
+
+
+"--------------------------------------------------------------------------
+"                          Code folding
+"--------------------------------------------------------------------------
+" 1. make sure foldmethod(fdm) is set properly.
+" 2. open folds:      za, zC, zc 
+" 3. close folds:     zo, zO
+" 4. goto next fold:  
+" 5. previous fold: 
 "--------------------------------------------------------------------------
 " 
 "          auto commands
