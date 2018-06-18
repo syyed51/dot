@@ -39,6 +39,12 @@
     unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
     assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
 
+    skip = update-index --skip-worktree
+    unskip = update-index --no-skip-worktree
+    skipped= "!git ls-files -v | grep ^S | cut -c 3-"
+    unskipall = "!git skipped | xargs git update-index --no-skip-worktree"
+    skipall= "!git st -s | awk {'print $2'} | xargs git skip"
+
     ours = "!f() { git co --ours $@ && git add $@; }; f"
     theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
