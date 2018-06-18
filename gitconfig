@@ -48,6 +48,8 @@
     ours = "!f() { git co --ours $@ && git add $@; }; f"
     theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 
+    scan = "!git clean -nx && git clean -ndx"
+    nuke = "!git clean -fx && git clean -fdx"
 
 [color]
     ui = auto
