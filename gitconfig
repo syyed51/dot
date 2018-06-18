@@ -17,13 +17,11 @@
     co = checkout
     ci = commit --verbose
     br = !branches.sh
-    ls = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d %C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative --notes --branches --tags --exclude=refs/stash
-    lo = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d%C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative  --notes --tags --exclude=refs/stash
     la = log --graph --abbrev-commit --decorate --oneline --date=relative --notes --branches --tags --exclude=refs/stash
     lt = log --graph --abbrev-commit --decorate --oneline --date=relative 
-    ls = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d %C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative --all
+    dc = diff --cached
+
     lst = !git ls --since=yesterday
-    lo = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d%C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative 
     la = log --graph --abbrev-commit --decorate --oneline --date=relative --all
     alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
     viz= "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
@@ -33,6 +31,17 @@
     fl = diff-tree --no-commit-id --name-only -r
     fa = show --stat --oneline
     ff = show --name-only --oneline
+    ls = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d %C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative --notes --branches --tags --exclude=refs/stash
+    lo = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d%C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative  --notes --tags --exclude=refs/stash
+    assume = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+    unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+    assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+
+    ours = "!f() { git co --ours $@ && git add $@; }; f"
+    theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+
 
 [color]
     ui = auto
