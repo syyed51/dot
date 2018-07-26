@@ -22,6 +22,7 @@
     la = log --graph --abbrev-commit --decorate --oneline --date=relative --notes --branches --tags --exclude=refs/stash
     lt = log --graph --abbrev-commit --decorate --oneline --date=relative 
     ls = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d %C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative --all
+    lss = !git ls --stat
     lst = !git ls --since=yesterday
     lo = log --graph --abbrev-commit --decorate --format=format:'%C(auto)%h %d%C(auto)%s %C(dim yellow italic)<%an>%Creset %C(yellow italic)(%ar)' --date=relative 
     la = log --graph --abbrev-commit --decorate --oneline --date=relative --all
