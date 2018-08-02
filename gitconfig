@@ -13,7 +13,7 @@
     default = current
 
 [alias]
-    st = status
+    st = status -uall
     co = checkout
     ci = commit --verbose
     br = !branches.sh
